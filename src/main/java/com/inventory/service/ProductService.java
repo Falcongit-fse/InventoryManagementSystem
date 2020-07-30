@@ -20,6 +20,14 @@ public class ProductService {
 		return productList;
 	}
 	public ResponseEntity<String> createProduct(Product product){
+		Product existingProduct=productRepository.findByProductName(product.getProductName());
+		System.out.println("existingProduct:"+existingProduct);
+		int existingQuantity=0;
+		if(existingProduct!=null) {
+			existingQuantity=existingProduct.getProductQuantity();
+			product.setProductQuantity(existingQuantity+product.getProductQuantity());
+		}
+			
 		productRepository.save(product);
 		return new ResponseEntity<String>("Product stored successfully!!", HttpStatus.CREATED);
 	}

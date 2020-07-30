@@ -17,18 +17,22 @@ public class Product {
 	private String productType;
 	private Integer productQuantity;
 	private Double productPrice;
+	private Integer productsSold;
 	public Product() {
 		super();
 	}
+	
 	public Product(Integer productId, String productName, String productType, Integer productQuantity,
-			Double productPrice) {
+			Double productPrice, Integer productsSold) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
 		this.productType = productType;
 		this.productQuantity = productQuantity;
 		this.productPrice = productPrice;
+		this.productsSold = productsSold;
 	}
+
 	public Integer getProductId() {
 		return productId;
 	}
@@ -59,10 +63,17 @@ public class Product {
 	public void setProductPrice(Double productPrice) {
 		this.productPrice = productPrice;
 	}
+	
+	public Integer getProductsSold() {
+		return productsSold;
+	}
+	public void setProductsSold(Integer productsSold) {
+		this.productsSold = productsSold;
+	}
 	@Override
 	public String toString() {
 		return "ProductEntity [productId=" + productId + ", productName=" + productName + ", productType=" + productType
-				+ ", productQuantity=" + productQuantity + ", productPrice=" + productPrice + "]";
+				+ ", productQuantity=" + productQuantity + ", productsSold=" + productsSold + ", productPrice=" + productPrice + "]";
 	}
 	
 	
