@@ -1,13 +1,13 @@
 package com.inventory.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
+
 
 import com.inventory.entity.Product;
 import com.inventory.repository.ProductRepository;
@@ -16,8 +16,8 @@ public class ProductService {
 	@Autowired
 	ProductRepository productRepository;
 	public List<Product> getAllProducts(){
-		List<Product> productList=(List<Product>) productRepository.findAll();
-		return productList;
+		
+		return (List<Product>)productRepository.findAll();
 	}
 	public ResponseEntity<String> createProduct(Product product){
 		Product existingProduct=productRepository.findByProductName(product.getProductName());
@@ -42,6 +42,10 @@ public class ProductService {
 	}
 	public Product getProductById(Integer productId) {
 		
-		return productRepository.findById(productId).get();
+		Optional<Product> optionalProduct = productRepository.findById(productId);
+		Product product=null;
+		if(optionalProduct.isPresent())
+			product=optionalProduct.get();
+		return product;
 	}
 }
