@@ -18,11 +18,11 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
-		<jacoco.version>0.8.3</jacoco.version>
+		<!-- <jacoco.version>0.8.3</jacoco.version>
 		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
 		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
 		<sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
-		<sonar.language>java</sonar.language>
+		<sonar.language>java</sonar.language> -->
 	</properties>
 
 	<dependencies>
@@ -40,11 +40,11 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -68,10 +68,10 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.0.2</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+		</dependency> 
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
@@ -81,7 +81,7 @@
 			<groupId>org.sonarsource.scanner.maven</groupId>
 			<artifactId>sonar-maven-plugin</artifactId>
 			<version>3.7.0.1746</version>
-		</dependency>
+		</dependency>-->
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -114,7 +114,7 @@
 		</dependency>
 
 	</dependencies>
-	<profiles>
+	<!-- <profiles>
 		<profile>
 			<id>sonar</id>
 			<activation>
@@ -132,9 +132,9 @@
 					http://localhost:9000
 				</sonar.host.url>
 			</properties>
-		</profile>
-	</profiles>
-	<dependencyManagement>
+		</profile> 
+	</profiles>-->
+	<!-- <dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
@@ -144,14 +144,14 @@
 				<scope>import</scope>
 			</dependency>
 		</dependencies>
-	</dependencyManagement>
+	</dependencyManagement> -->
 	<build>
 		<plugins>
 			 <plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.5</version>
@@ -172,7 +172,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>  
+			</plugin>   -->
 			
     
 		</plugins>
